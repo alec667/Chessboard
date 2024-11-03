@@ -13,28 +13,13 @@ public class Main {
     public static void main(String[] args) {
         //System.out.println("Hello world!");
 
+        System.out.println("En un tablero de 8 * 8:");
         int size = 8;
-        String[][] tablero = new String[size][size];
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (j >= 0 && j <= i) {
-                    tablero[i][j] = "[Rojo]";
+        Tablero tablero = new Tablero(size);
+        tablero.pintarTablero();
+        tablero.printTablero();
 
-                } else {
-                    tablero[i][j] = "[Azul]";
-                }
-
-            }
-        }
-
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero.length; j++) {
-                System.out.print(tablero[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println("Nro de celdas Rojas: " + (size * (size + 1)) / 2);
-        System.out.println("Nro de celdas Azules: " + ((size * size) - (size * (size + 1)) / 2));
+        System.out.println("Nro de celdas Rojas: " + tablero.nroDeCeldasRojas());
+        System.out.println("Nro de celdas Azules: " + ((size * size) - tablero.nroDeCeldasRojas()));
     }
 }
