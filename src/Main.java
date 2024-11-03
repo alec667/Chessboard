@@ -11,7 +11,6 @@
 
 public class Main {
     public static void main(String[] args) {
-        //System.out.println("Hello world!");
 
         System.out.println("En un tablero de 8 * 8:");
         int size = 8;
@@ -21,5 +20,16 @@ public class Main {
 
         System.out.println("Nro de celdas Rojas: " + tablero.nroDeCeldasRojas());
         System.out.println("Nro de celdas Azules: " + ((size * size) - tablero.nroDeCeldasRojas()));
+
+        System.out.println();
+
+        System.out.println("En un tablero de 1000 * 1000:");
+        size = 1000;
+        Tablero t2 = new Tablero(size);
+        t2.pintarTablero();
+        //t2.printTablero();
+
+        System.out.println("Nro de celdas Rojas: " + t2.nroDeCeldasRojas());
+        System.out.println("Nro de celdas Azules: " + ((size * size) - t2.nroDeCeldasRojas()));
     }
 }

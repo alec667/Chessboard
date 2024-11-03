@@ -33,7 +33,8 @@ public class Tablero {
     }
 
     public int nroDeCeldasRojas() {
-        return 0;
+        int celdas = (tablero.length * (tablero.length + 1)) / 2;
+        return celdas;
     }
 
     //Getters & setters:
