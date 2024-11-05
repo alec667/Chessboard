@@ -7,6 +7,7 @@ public class Tablero {
         tablero = new String[size][size];
     }
 
+    //Rellena el tablero de celdas rojas y azules:
     public void pintarTablero() {
         for (int i = 0; i < getTablero().length; i++) {
             for (int j = 0; j < getTablero().length; j++) {
@@ -22,7 +23,7 @@ public class Tablero {
     }
 
 
-    //dibuja el tablero en terminal:
+    //dibuja el tablero en la terminal:
     public void printTablero() {
         for (int i = 0; i < getTablero().length; i++) {
             for (int j = 0; j < getTablero().length; j++) {
@@ -32,9 +33,16 @@ public class Tablero {
         }
     }
 
+    //Calcula la cantidad de celdas rojas:
     public int nroDeCeldasRojas() {
-        int celdas = (tablero.length * (tablero.length + 1)) / 2;
-        return celdas;
+        int celdasRojas = (tablero.length * (tablero.length + 1)) / 2;
+        return celdasRojas;
+    }
+
+    //Calcula la cantidad de celdas azules:
+    public int nroDeCeldasAzules() {
+        int celdasAzules = (getTablero().length * getTablero().length) - nroDeCeldasRojas();
+        return celdasAzules;
     }
 
     //Getters & setters:
